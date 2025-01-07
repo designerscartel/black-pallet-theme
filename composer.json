@@ -18,6 +18,11 @@
       "name": "Hasan Özbey",
       "email": "hasanoozbey@gmail.com",
       "homepage": "https://github.com/the-turk"
+    },
+    {
+      "name": "Matt Tullett",
+      "email": "matt@designerscartel.com@",
+      "homepage": "https://designerscartel.com/"
     }
   ],
   "support": {
@@ -38,7 +43,7 @@
   },
   "extra": {
     "flarum-extension": {
-      "title": "Pallet Theme",
+      "title": "Black Pallet Theme",
       "icon": {
         "name": "fas fa-pallet",
         "backgroundColor": "#b72a2a",
