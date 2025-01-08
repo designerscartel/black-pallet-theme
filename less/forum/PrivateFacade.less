@@ -8,8 +8,17 @@
 
   .PrivateFacade-AuthView {
 
+    .Modal {
+      border-radius: 0;
+    }
+
     .Modal-header {
       display: none;
+    }
+
+    .Modal-body {
+      padding-top: 0;
+      padding-bottom: 0;
     }
 
     .Modal-body,
@@ -21,7 +30,7 @@
       }
     }
 
-    .Form:last-child {
+    .Form-group:last-child {
       margin-top: 12px;
     }
 
@@ -36,11 +45,19 @@
       border: 2px solid #ffffff;
     }
 
+    @media (min-width: 768px) {
+      .Modal-content {
+        border-radius: 0;
+      }
+    }
+
   }
 
   .PrivateFacade .Modal-body {
     background: #000000;
   }
+
+
 
 }
 
