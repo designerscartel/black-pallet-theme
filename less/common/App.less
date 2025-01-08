@@ -319,11 +319,17 @@
 
 .Search {
 	border-bottom:2px solid #ffffff;
+	text-transform: uppercase;
+}
+
+.Avatar {
+	/* had to use important here as to override the system */
+	background: #000000 !important;
 }
 
 @media (min-width: 768px) {
 	.App-header .Button, .App-header .Button:hover {
-		color: var(--header-colored-control-color, #fff);
-		background: var(--header-colored-control-bg, rgba(0, 0, 0, 0.1));
+		color: #000000;
+		background: #ffffff;
 	}
 }
