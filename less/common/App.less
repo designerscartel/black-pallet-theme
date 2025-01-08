@@ -2,427 +2,399 @@
 @screen-desktop: 992px + @left-column;
 
 .App-content {
-	border: 0;
+  border: 0;
 
-	@media @desktop-up {
-		margin-left: @left-column;
-	}
+  @media @desktop-up {
+    margin-left: @left-column;
+  }
 }
 
 .App-header {
-	text-transform: uppercase;
-	display: flex;
-	justify-content:space-between;
-	align-items:center;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-	.scrolled & {
-		box-shadow: none;
-	}
+  .scrolled & {
+    box-shadow: none;
+  }
 
-	header& {
-		border-bottom: 1px solid #e8e8e8;
+  header& {
+    border-bottom: 1px solid #e8e8e8;
 
-		& when (@config-dark-mode = true) {
-			border-color: #2a3346;
-		}
-	
-	  .container {
-		  margin: 0;
-		  width: 100%;
-	  }
-	}
+    & when (@config-dark-mode = true) {
+      border-color: #2a3346;
+    }
 
-	.Header-secondary {
-		& .item-newDiscussion .Button {
-			margin-left: 15px;
-			margin-right: 15px;
-			line-height: normal;
-	
-			@media (max-width: @screen-tablet-max) {
-				display: none;
-			}
-		}
-	
-		& .Search {
-			@media (max-width: @screen-tablet-max) {
-				margin-right: 0;
-			}
-		}
+    .container {
+      margin: 0;
+      width: 100%;
+    }
+  }
 
-		.Button--flat {
-			border-radius: 100%;
-		}
-	}
-	
-	.Header-primary .LinksButton {
-		@media (max-width: @screen-tablet-max) {
-			padding: 7px;
-			font-size: 12px;
-		}
-	}
+  .Header-secondary {
+    & .item-newDiscussion .Button {
+      margin-left: 15px;
+      margin-right: 15px;
+      line-height: normal;
+
+      @media (max-width: @screen-tablet-max) {
+        display: none;
+      }
+    }
+
+    & .Search {
+      @media (max-width: @screen-tablet-max) {
+        margin-right: 0;
+      }
+    }
+
+    .Button--flat {
+      border-radius: 100%;
+    }
+  }
+
+  .Header-primary .LinksButton {
+    @media (max-width: @screen-tablet-max) {
+      padding: 7px;
+      font-size: 12px;
+    }
+  }
 }
 
 .hasPane.panePinned {
-	& .App-content, & .App-footer {
-		margin-left: 120px;
-	}
+  & .App-content, & .App-footer {
+    margin-left: 120px;
+  }
 }
 
 // ------------------------------------
 // Sidebar
 
 .App-sidebar {
-	position: fixed;
-	left: 0;
-	top: 100px;
-	bottom: 0;
-	width: @left-column;
-	border-right: 1px solid #e8e8e8;
-	background: #000000;
-	color: #ffffff;
-	text-transform: uppercase;
+  position: fixed;
+  left: 0;
+  top: 100px;
+  bottom: 0;
+  width: @left-column;
+  border-right: 1px solid #e8e8e8;
+  background: #000000;
+  color: #ffffff;
+  text-transform: uppercase;
 
-	@media (max-width: @screen-tablet-max) {
-		display: none;
-	}
+  @media (max-width: @screen-tablet-max) {
+    display: none;
+  }
 
-	& when (@config-dark-mode = true) {
-		border-color: transparent;
-		background: #1C2330;
-	}
+  & when (@config-dark-mode = true) {
+    border-color: transparent;
+    background: #1C2330;
+  }
 
-	.App-sidebar-container {
-		height: 100%;
-		width: 100%;
-		position: relative;
-		overflow-y: auto;
-		overflow-x: hidden;
-	}
+  .App-sidebar-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 
-	.App-sidebar-user-block {
-		position: relative;
-		margin: 20px 20px 0 20px;
-		border-bottom: 1px solid #dedede;
-		text-align: center;
-		height: 200px;
-		display: flex;
-		align-items: center;
-	
-		& when (@config-dark-mode = true) {
-			border-color: #2a3346;
-		}
-	
-		.avatarWrapper {
-			position: relative;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 82px;
-			height: 82px;
-			min-width: 82px;
-			border: 1px solid #d8d8d8;
-			border-radius: 50%;
-			margin: 0 auto 6px auto;
-		
-			& when (@config-dark-mode = true) {
-				border-color: #2a3346;
-			}
-		}
-	
-		.Avatar-container {
-			position: relative;
-	
-			.badges {
-				position: absolute;
-				width: 64px;
-				text-align: right;
-				white-space: nowrap;
-				bottom: 0;
-				right: 0;
-	
-				.Badge {
-					margin-left: -10px;
-				}
-			}
-	
-			.Avatar {
-				.Avatar--size(4.5rem);
-			}
-		}
-	
-		h4 {
-			font-size: .9rem;
-			color: #ffffff;
-			margin: 0;
-			padding-bottom: 10px;
-		
-			& when (@config-dark-mode = true) {
-				color: white;
-			}
-		}
-	
-		p {
-			font-size: .8rem;
-			color: #808080;
-			margin: 0;
-			padding: 0;
-		
-			& when (@config-dark-mode = true) {
-				color: #a2a5b9;
-			}
-		}
-	
-		.loggedIn {
-			width: 100%;
-		}
-		
-		.guest {
-			.guestButtons {
-				margin-top: 10px;
-			
-				.Button {
-					font-weight: 500;
-					background: transparent;
-					border: 1px solid #ccc;
-					border-radius: 0;
-					color: #000000;
-			
-					&:hover {
-						background: #ffffff;
-			
-						& when (@config-dark-mode = true) {
-							background: #ffffff;
-						}
-					}
-			
-					& when (@config-dark-mode = true) {
-						border-color: #ffffff;
-						color: #ffffff;
-					}
-				}
-			}
-			
-			.guestGreeting, .guestMessage {
-				text-align: left;
-			}
-		}
-		
-		.App-sidebar-user-stats {
-			display: flex;
-			align-items: center;
-			justify-content: space-around;
-			padding: 20px 0;
-		
-			.statItem {
-				text-align: center;
-		
-				span {
-					display: block;
-		
-					&:first-child {
-						text-transform: uppercase;
-						font-size: .65rem;
-						color: #ffffff;
-					
-						& when (@config-dark-mode = true) {
-							color: white;
-						}
-					}
-			
-					&:last-child {
-						font-size: .8rem;
-						color: #999;
-					
-						& when (@config-dark-mode = true) {
-							color: #a2a5b9;
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	.App-sidebar-items {
-		position: absolute;
-		left: 0;
-		width: 100%;
-	
-		.App-sidebar-items-container {
-			position: relative;
-			width: 100%;
-			overflow-y: hidden;
-			padding: 20px 0;
-		
-			ul {
-				margin: 0;
-				padding: 0;
-				list-style: none;
-			}
+  .App-sidebar-user-block {
+    position: relative;
+    margin: 20px 20px 0 20px;
+    border-bottom: 1px solid #dedede;
+    text-align: center;
+    height: 200px;
+    display: flex;
+    align-items: center;
 
-			li[class^="item-navTag"] {
-				display: none; /* Hide li elements that have a class starting with "item-navTag" */
-			}
+    & when (@config-dark-mode = true) {
+      border-color: #2a3346;
+    }
 
-			li {
-				padding: 14px 40px;
-				border-left: 4px solid transparent;
+    .avatarWrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 82px;
+      height: 82px;
+      min-width: 82px;
+      border: 1px solid #d8d8d8;
+      border-radius: 50%;
+      margin: 0 auto 6px auto;
 
-				&.separator {
-					margin: 15px 30px;
-					padding: 0;
-					border-left: 0;
-					border-bottom: 1px solid #dedede;
-				
-					& when (@config-dark-mode = true) {
-						border-color: #2a3346;
-					}
-				}
+      & when (@config-dark-mode = true) {
+        border-color: #2a3346;
+      }
+    }
 
-				&.Dropdown-separator {
-					display: none;
-				}
+    .Avatar-container {
+      position: relative;
 
-				& a {
-					display: flex;
-					align-items: center;
-	
-					& span {
-						display: block;
-						color: #ffffff;
-						font-size: .8rem;
-						font-weight: 600;
-				
-						& when (@config-dark-mode = true) {
-							color: #ffffff;
-						}
-					}
-	
-					&:hover {
-						text-decoration: none;
-					}
-				}
-	
-				& i.icon {
-					height: 18px;
-					width: 18px;
-					margin-right: 20px;
-					color: #cecece;
-				}
-			
-				&.active {
-					border-color: #ffffff;
-			
-					& when (@config-dark-mode = true) {
-						border-color: #ffffff;
-					}
-				}
-			}
-		}
-	}
+      .badges {
+        position: absolute;
+        width: 64px;
+        text-align: right;
+        white-space: nowrap;
+        bottom: 0;
+        right: 0;
+
+        .Badge {
+          margin-left: -10px;
+        }
+      }
+
+      .Avatar {
+        .Avatar--size(4.5rem);
+      }
+    }
+
+    h4 {
+      font-size: .9rem;
+      color: #ffffff;
+      margin: 0;
+      padding-bottom: 10px;
+
+      & when (@config-dark-mode = true) {
+        color: white;
+      }
+    }
+
+    p {
+      font-size: .8rem;
+      color: #808080;
+      margin: 0;
+      padding: 0;
+
+      & when (@config-dark-mode = true) {
+        color: #a2a5b9;
+      }
+    }
+
+    .loggedIn {
+      width: 100%;
+    }
+
+    .guest {
+      .guestButtons {
+        margin-top: 10px;
+
+        .Button {
+          font-weight: 500;
+          background: transparent;
+          border: 1px solid #ccc;
+          border-radius: 0;
+          color: #000000;
+
+          &:hover {
+            background: #ffffff;
+
+            & when (@config-dark-mode = true) {
+              background: #ffffff;
+            }
+          }
+
+          & when (@config-dark-mode = true) {
+            border-color: #ffffff;
+            color: #ffffff;
+          }
+        }
+      }
+
+      .guestGreeting, .guestMessage {
+        text-align: left;
+      }
+    }
+
+    .App-sidebar-user-stats {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 20px 0;
+
+      .statItem {
+        text-align: center;
+
+        span {
+          display: block;
+
+          &:first-child {
+            text-transform: uppercase;
+            font-size: .65rem;
+            color: #ffffff;
+
+            & when (@config-dark-mode = true) {
+              color: white;
+            }
+          }
+
+          &:last-child {
+            font-size: .8rem;
+            color: #999;
+
+            & when (@config-dark-mode = true) {
+              color: #a2a5b9;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .App-sidebar-items {
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    .App-sidebar-items-container {
+      position: relative;
+      width: 100%;
+      overflow-y: hidden;
+      padding: 20px 0;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      li[class^="item-navTag"] {
+        display: none; /* Hide li elements that have a class starting with "item-navTag" */
+      }
+
+      li {
+        padding: 14px 40px;
+        border-left: 4px solid transparent;
+
+        &.separator {
+          margin: 15px 30px;
+          padding: 0;
+          border-left: 0;
+          border-bottom: 1px solid #dedede;
+
+          & when (@config-dark-mode = true) {
+            border-color: #2a3346;
+          }
+        }
+
+        &.Dropdown-separator {
+          display: none;
+        }
+
+        & a {
+          display: flex;
+          align-items: center;
+
+          & span {
+            display: block;
+            color: #ffffff;
+            font-size: .8rem;
+            font-weight: 600;
+
+            & when (@config-dark-mode = true) {
+              color: #ffffff;
+            }
+          }
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        & i.icon {
+          height: 18px;
+          width: 18px;
+          margin-right: 20px;
+          color: #cecece;
+        }
+
+        &.active {
+          border-color: #ffffff;
+
+          & when (@config-dark-mode = true) {
+            border-color: #ffffff;
+          }
+        }
+      }
+    }
+  }
 }
 
 .Search {
-	border-bottom:2px solid #ffffff;
-	text-transform: uppercase;
+  border-bottom: 2px solid #ffffff;
+  text-transform: uppercase;
 }
 
 .Avatar,
 .UserHero {
-	/* had to use important here as to override the system */
-	background: #000000 !important;
+  /* had to use important here as to override the system */
+  background: #000000 !important;
 }
 
 @media (min-width: 768px) {
 
-	.App-header .Button {
-		color: #ffffff;
-	}
+  .App-header .Button {
+    color: #ffffff;
+  }
 
-	.App-header .Button:hover {
-		color: #000000;
-		background: #ffffff;
-	}
+  .App-header .Button:hover {
+    color: #000000;
+    background: #ffffff;
+  }
 }
 
 .Hero {
-	text-align: left;
+  text-align: left;
 }
 
 .Post-actions {
-	.Button--link {
-		color: #000000;
-	}
+  .Button--link {
+    color: #000000;
+  }
 }
 
 @media (max-width: 767px) {
-	.IndexPage-nav .ButtonGroup {
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-	}
+  .IndexPage-nav .ButtonGroup {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 
-	#nav-logo {
-		align-self: center;
-		margin: 0 10vw;
-	}
+  #nav-logo {
+    align-self: center;
+    margin: 0 10vw;
+  }
 
-	.IndexPage-nav .ButtonGroup > .Dropdown-toggle {
-		width: 100% !important;
-		overflow: unset !important;
-		text-overflow: unset !important;
-		margin: 0 10vw !important;
-	}
+  .IndexPage-nav .ButtonGroup > .Dropdown-toggle {
+    width: 100% !important;
+    overflow: unset !important;
+    text-overflow: unset !important;
+    margin: 20px 10vw 0 10vw !important;
+  }
 }
 
-
-
-/*
 @media (max-width: 767px) {
-	.IndexPage-nav .ButtonGroup {
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
 
-		flex-direction: column-reverse;
-	}
+  .App-navigation {
 
-	#nav-logo {
-		width:180px;
-		margin: 20px 0 0 0;
-	}
+    .ButtonGroup > .Button {
+      display: flex;
+      align-items: center;
+    }
 
-	#nav-logo img {
-		width:100%
-	}
+    &:before {
 
-	.IndexPage-nav .ButtonGroup > .Dropdown-toggle {
-		width: 100% !important;
-		overflow: unset !important;
-		text-overflow: unset !important;
-		margin: 0 10vw !important;
-	}
-
-}
-
-.App-primaryControl>.Button,.App-titleControl>.Button,.App-backControl>.Button {
-	height: auto;
-}
-
- */
-
-
-@media (max-width:767px) {
-
-	.App-navigation:before {
-		content: '';
-		background-image:url('/forum/assets/logo-geyf7shx.png');
-		background-size: contain;
-		background-position: center;
-		background-repeat: no-repeat;
-		width: 180px;
-		height: 50px;
-		display: block;
-		margin: 0 auto;
-	}
+      content: '';
+      background-image: url('/forum/assets/logo-geyf7shx.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 180px;
+      height: 50px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
 
 }
