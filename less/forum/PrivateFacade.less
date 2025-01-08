@@ -2,7 +2,8 @@
   background: #000000;
   color: #ffffff;
 
-  .App-drawer {
+  .App-drawer,
+  .App-navigation {
     display: none;
   }
 
@@ -31,7 +32,7 @@
     }
 
     .Form-group:last-child {
-      margin-top: 12px;
+      margin-top: 36px;
     }
 
     .FormControl {
@@ -63,4 +64,13 @@
 
 .App.App--privateFacade {
   padding-top: 0;
+}
+
+@media (max-width: 767.98px) {
+
+  .PrivateFacade-AuthView svg, .PrivateFacade-AuthView img {
+    max-height: none;
+    width: 200px;
+    margin: 36px auto;
+  }
 }
