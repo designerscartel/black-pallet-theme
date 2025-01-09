@@ -350,11 +350,22 @@
 
 .Hero {
   text-align: left;
+
+  & when (@config-dark-mode = true) {
+    background: transparent !important;
+  }
+
 }
 
 .Post-actions {
   .Button--link {
     color: #000000;
+
+    & when (@config-dark-mode = true) {
+      color: #ffffff;
+      border: none;
+    }
+
   }
 }
 
@@ -422,7 +433,7 @@
 
   .topNav .Dropdown--select .Dropdown-menu>li>a {
     & when (@config-dark-mode = true) {
-      color: #ffffff;
+      color: #ffffff !important;
     }
   }
 }
