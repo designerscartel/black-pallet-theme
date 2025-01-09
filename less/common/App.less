@@ -103,7 +103,7 @@
   .App-sidebar-user-block {
     position: relative;
     margin: 20px 20px 0 20px;
-    border-bottom: 1px solid #dedede;
+    border-bottom: 1px solid #ffffff;
     text-align: center;
     height: 200px;
     display: flex;
@@ -275,10 +275,11 @@
           padding: 0;
           border-left: 0;
           border-bottom: 1px solid #dedede;
-
+          /*
           & when (@config-dark-mode = true) {
             border-color: #2a3346;
           }
+           */
         }
 
         &.Dropdown-separator {
@@ -410,5 +411,11 @@
 @media (min-width: 1100px) {
   .container {
     width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .App-header .Button--link, .App-header .Search-input {
+    color: #fff;
   }
 }
