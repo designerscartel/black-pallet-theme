@@ -89,7 +89,7 @@
   & when (@config-dark-mode = true) {
     background: #1a1a1a;
     border-color: transparent;
-    box-shadow: 0 6px 6px rgba(0,0,0,0.5);
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
   }
 
   .App-sidebar-container {
@@ -415,7 +415,14 @@
 }
 
 @media (min-width: 768px) {
+  .App-header .FormControl,
   .App-header .Button--link, .App-header .Search-input {
     color: #fff;
+  }
+
+  .topNav .Dropdown--select .Dropdown-menu>li>a {
+    & when (@config-dark-mode = true) {
+      color: #ffffff;
+    }
   }
 }
