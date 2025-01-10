@@ -423,6 +423,13 @@
     }
   }
 
+  .App-drawer .Button,.App-drawer .Button:hover {
+    & when (@config-dark-mode = true) {
+      color: #ffffff;
+    }
+
+  }
+
 }
 
 @media (min-width: 1100px) {
@@ -441,13 +448,6 @@
     & when (@config-dark-mode = true) {
       color: #ffffff !important;
     }
-  }
-
-  .App-drawer .Button,.App-drawer .Button:hover {
-    & when (@config-dark-mode = true) {
-      color: #ffffff;
-    }
-
   }
 }
 
