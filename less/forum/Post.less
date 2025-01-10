@@ -27,9 +27,9 @@
         background: #f7f7f7;
 
         & when (@config-dark-mode = true) {
-            color: #6c7d93;
-            background: #232c3c;
-            border-color: #2a3346;
+            color: #ffffff;
+            background: rgba(0,0,0, 0.1);
+            border-color: rgba(255,255,255, 0.3);
 
             & .PostMention, & .UserMention {
                 background: #1C2330;
@@ -48,6 +48,6 @@ div[data-fof-upload-download-uuid] {
 
 .ReplyPlaceholder:hover {
     & when (@config-dark-mode = true) {
-		border-color: #ffffff;
+		border-color: rgba(255,255,255, 0.3);
 	}
 }

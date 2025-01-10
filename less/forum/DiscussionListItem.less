@@ -5,6 +5,10 @@
 
     .DiscussionListItem-content {
         border-bottom: 1px solid #000000;
+
+        & when (@config-dark-mode = true) {
+            border-bottom: rgba(255,255,255, 0.3);
+        }
     }
 
     .item-terminalPost {
