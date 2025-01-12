@@ -34,6 +34,9 @@
     border-radius: 0;
     background: #000000;
     color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 13px;
 
     & when (@config-dark-mode = true) {
         color: #ffffff;
@@ -64,3 +67,10 @@
 }
 
  */
+
+@media (min-width: 768px) {
+    .DiscussionPage-nav .ButtonGroup, .DiscussionPage-nav .Button {
+        width: 100%;
+        background: #000;
+    }
+}

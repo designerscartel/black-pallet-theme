@@ -46,7 +46,7 @@
       "title": "Black Pallet Theme",
       "icon": {
         "name": "fas fa-pallet",
-        "backgroundColor": "#b72a2a",
+        "backgroundColor": "#000000",
         "color": "#fff"
       }
     }
